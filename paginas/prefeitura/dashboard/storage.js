@@ -2,7 +2,25 @@ const STORAGE = "denuncias";
 
 function carregarDenuncias() {
 
-    return JSON.parse(localStorage.getItem(STORAGE)) || [];
+    const lista =
+        JSON.parse(
+            localStorage.getItem(STORAGE)
+        ) || [];
+
+    lista.forEach(d=>{
+
+        if(
+            !d.departamento
+        ){
+
+            d.departamento =
+                "Nova";
+
+        }
+
+    });
+
+    return lista;
 
 }
 

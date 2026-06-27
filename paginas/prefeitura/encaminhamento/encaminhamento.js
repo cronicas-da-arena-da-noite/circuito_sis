@@ -1,6 +1,6 @@
 window.onload = () => {
 
-    mostrarInbox();
+    montarKanban();
 
 };
 
@@ -14,7 +14,7 @@ btnDashboard.onclick = () => {
 btnEncaminhar.onclick = () => {
 
     location.href =
-        "../encaminhamento/encaminhamento.html";
+        "encaminhamento.html";
 
 };
 
