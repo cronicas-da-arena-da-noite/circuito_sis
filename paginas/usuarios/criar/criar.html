@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cadastro</title>
+
+    <link rel="stylesheet" href="criar.css">
+
+</head>
+
+<body>
+
+    <div class="tela">
+
+        <div class="topo">
+
+            <a href="../../../index.html" class="voltar">
+                ←
+            </a>
+
+            <div class="icone-usuario">
+
+                <img src="../../../anexos/imagens/imagem_perfil.png" alt="Perfil">
+
+            </div>
+
+            <h1>Cadastro</h1>
+
+        </div>
+
+        <div class="conteudo">
+
+            <form id="formCadastro">
+
+                <input
+                    id="nome"
+                    type="text"
+                    placeholder="Nome completo"
+                    required
+                >
+
+                <input
+                    id="email"
+                    type="text"
+                    placeholder="Email ou Telefone"
+                    required
+                >
+
+                <input
+                    id="senha"
+                    type="password"
+                    placeholder="Senha"
+                    required
+                >
+
+                <input
+                    id="repetirSenha"
+                    type="password"
+                    placeholder="Repetir senha"
+                    required
+                >
+
+                <div class="campo-select">
+
+                    <select
+                        id="pergunta"
+                        required
+                    >
+
+                        <option value="">
+                            Pergunta secreta
+                        </option>
+
+                        <option>
+                            Nome do primeiro animal?
+                        </option>
+
+                        <option>
+                            Nome da mãe?
+                        </option>
+
+                        <option>
+                            Cidade onde nasceu?
+                        </option>
+
+                        <option>
+                            Comida favorita?
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <input
+                    id="resposta"
+                    type="text"
+                    placeholder="Resposta secreta"
+                    required
+                >
+
+                <label class="termos">
+
+                    <input
+                        id="termos"
+                        type="checkbox"
+                        required
+                    >
+
+                    <span>
+                        Termos
+                    </span>
+
+                </label>
+
+                <button
+                    type="submit"
+                    class="botao"
+                >
+                    Finalizar cadastro
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <script src="criar.js"></script>
+
+</body>
+
+</html>

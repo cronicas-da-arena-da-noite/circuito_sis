@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palhoça Fácil - Prefeitura</title>
+
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+
+<div class="container">
+
+
+    <aside class="sidebar">
+
+
+        <div class="logo">
+
+            <h2>
+                PREFEITURA<br>
+                PALHOÇA
+            </h2>
+
+        </div>
+
+
+        <nav>
+
+
+            <button id="btnDashboard" class="menu active">
+
+                📥 Recebidas
+
+            </button>
+
+
+            <button id="btnEncaminhar" class="menu">
+
+                🏛️ Em Atendimento
+
+            </button>
+
+
+        </nav>
+
+
+        <button id="btnSair" class="sair">
+
+            🚪 Sair
+
+        </button>
+
+
+    </aside>
+
+
+
+    <main class="conteudo">
+
+
+        <div class="topo">
+
+
+            <h2 id="tituloPagina">
+
+                Denúncias Recebidas
+
+            </h2>
+
+
+        </div>
+
+
+
+        <div class="lista" id="listaDenuncias">
+
+
+        </div>
+
+
+
+    </main>
+
+
+
+    <aside class="painel">
+
+
+        <h2>
+
+            Denúncia
+
+        </h2>
+
+
+
+        <label>
+
+            Protocolo
+
+        </label>
+
+        <input id="protocolo" disabled>
+
+
+
+        <label>
+
+            Usuário
+
+        </label>
+
+        <input id="usuario">
+
+
+
+        <label>
+
+            Email
+
+        </label>
+
+        <input id="email">
+
+
+
+        <label>
+
+            Tipo
+
+        </label>
+
+        <input id="tipo">
+
+
+
+        <label>
+
+            Bairro
+
+        </label>
+
+        <input id="bairro">
+
+
+
+        <label>
+
+            Rua
+
+        </label>
+
+        <input id="rua">
+
+
+
+        <label>
+
+            Comentário
+
+        </label>
+
+
+        <textarea id="comentario"></textarea>
+
+
+
+        <label>
+
+            Arquivo
+
+        </label>
+
+
+        <input id="arquivo">
+
+
+
+        <button id="btnSalvar">
+
+            Atualizar denúncia
+
+        </button>
+
+
+
+    </aside>
+
+
+
+</div>
+
+
+
+<script src="storage.js"></script>
+<script src="inbox.js"></script>
+<script src="encaminhar.js"></script>
+<script src="editor.js"></script>
+<script src="app.js"></script>
+
+
+</body>
+</html>

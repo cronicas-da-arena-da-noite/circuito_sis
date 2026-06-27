@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Consultar Denúncia</title>
+
+  <link rel="stylesheet" href="consultar.css">
+
+</head>
+
+<body>
+
+  <div class="celular">
+
+    <!-- ===================================== -->
+    <!-- TOPO -->
+    <!-- ===================================== -->
+
+    <div class="topo">
+
+      <a class="voltar" href="../dashboard/dashboard.html" class="voltar">
+        ←
+      </a>
+
+      <img src="./anexo/imagens/image 9.png" class="logo">
+
+      <h1>
+        Consultar
+      </h1>
+
+      <p>
+        Consulte denúncias pelo protocolo
+      </p>
+
+    </div>
+
+    <!-- ===================================== -->
+    <!-- BUSCA -->
+    <!-- ===================================== -->
+
+    <div class="busca">
+
+      <label>
+        Código da denúncia
+      </label>
+
+      <input type="text" id="codigo" placeholder="Ex: PAL-123456">
+
+      <button class="botao-buscar" onclick="consultarDenuncia()">
+        Consultar denúncia
+      </button>
+
+    </div>
+
+    <!-- ===================================== -->
+    <!-- RESULTADO -->
+    <!-- ===================================== -->
+
+    <div class="resultado escondido" id="resultado">
+
+      <div class="card">
+
+        <div class="status-area">
+
+          <div class="status" id="statusDenuncia">
+            Em análise
+          </div>
+
+        </div>
+
+        <h2 id="tipoDenuncia">
+          Tipo
+        </h2>
+
+       <div class="info">
+
+  <span>
+    🏘️ Bairro
+  </span>
+
+  <p id="bairroDenuncia">
+    -
+  </p>
+
+</div>
+
+<div class="info">
+
+  <span>
+    🛣️ Rua
+  </span>
+
+  <p id="ruaDenuncia">
+    -
+  </p>
+
+</div>
+
+        <div class="info">
+
+          <span>
+            📝 Comentário
+          </span>
+
+          <p id="comentarioDenuncia">
+            -
+          </p>
+
+        </div>
+
+        <div class="info">
+
+          <span>
+            📅 Data
+          </span>
+
+          <p id="dataDenuncia">
+            -
+          </p>
+
+        </div>
+
+        <div class="info">
+
+          <span>
+            👤 Usuário
+          </span>
+
+          <p id="usuarioDenuncia">
+            -
+          </p>
+
+        </div>
+
+        <div class="info">
+
+          <span>
+            📎 Arquivo
+          </span>
+
+          <p id="arquivoDenuncia">
+            -
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- ===================================== -->
+    <!-- SEM RESULTADO -->
+    <!-- ===================================== -->
+
+    <div class="nao-encontrado escondido" id="naoEncontrado">
+
+      <div class="icone">
+        ❌
+      </div>
+
+      <h2>
+        Denúncia não encontrada
+      </h2>
+
+      <p>
+        Verifique o código digitado.
+      </p>
+
+    </div>
+
+  </div>
+
+  <script src="consultar.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,347 @@
+*{
+
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+
+  font-family:Arial, Helvetica, sans-serif;
+
+}
+
+body{
+
+  background:#edf2f7;
+
+  display:flex;
+
+  justify-content:center;
+
+  padding:20px;
+
+}
+
+/* ===================================== */
+/* CELULAR */
+/* ===================================== */
+
+.celular{
+
+  width:100%;
+  max-width:430px;
+  min-height:100vh;
+
+  background:white;
+
+  border-radius:35px;
+
+  overflow:hidden;
+
+  box-shadow:
+  0 20px 50px rgba(0,0,0,0.15);
+
+  padding:25px;
+
+}
+
+/* ===================================== */
+/* TOPO */
+/* ===================================== */
+
+.topo{
+
+  text-align:center;
+
+  position:relative;
+
+  padding-top:20px;
+
+}
+
+.voltar{
+text-decoration: none;
+  position:absolute;
+
+  left:0;
+
+  top:20px;
+
+  width:45px;
+  height:45px;
+
+  border-radius:50%;
+
+  background:#f1f5f9;
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
+
+  font-size:24px;
+
+  cursor:pointer;
+
+}
+
+.logo{
+
+  width:150px;
+
+  margin-bottom:10px;
+
+}
+
+.topo h1{
+
+  color:#144269;
+
+  font-size:38px;
+
+  margin-bottom:10px;
+
+}
+
+.topo p{
+
+  color:#64748b;
+
+}
+
+/* ===================================== */
+/* BUSCA */
+/* ===================================== */
+
+.busca{
+
+  margin-top:40px;
+
+}
+
+label{
+
+  display:block;
+
+  margin-bottom:10px;
+
+  color:#144269;
+
+  font-weight:bold;
+
+}
+
+input{
+
+  width:100%;
+
+  height:60px;
+
+  border:
+  2px solid #dbe3ec;
+
+  border-radius:18px;
+
+  padding:15px;
+
+  font-size:18px;
+
+  outline:none;
+
+  background:#f8fbff;
+
+}
+
+input:focus{
+
+  border-color:#12b8c5;
+
+  background:white;
+
+}
+
+.botao-buscar{
+
+  width:100%;
+
+  height:65px;
+
+  border:none;
+
+  border-radius:40px;
+
+  background:
+  linear-gradient(
+    90deg,
+    #0f4d7a,
+    #12b8c5
+  );
+
+  color:white;
+
+  font-size:18px;
+
+  font-weight:bold;
+
+  margin-top:20px;
+
+  cursor:pointer;
+
+  box-shadow:
+  0 10px 20px rgba(18,184,197,0.25);
+
+}
+
+/* ===================================== */
+/* RESULTADO */
+/* ===================================== */
+
+.resultado{
+
+  margin-top:35px;
+
+}
+
+.card{
+
+  background:#f8fbff;
+
+  border-radius:28px;
+
+  padding:25px;
+
+  border:
+  2px solid #e2e8f0;
+
+}
+
+.status-area{
+
+  text-align:right;
+
+  margin-bottom:15px;
+
+}
+
+.status{
+
+  display:inline-block;
+
+  padding:10px 18px;
+
+  border-radius:30px;
+
+  background:#fef3c7;
+
+  color:#92400e;
+
+  font-weight:bold;
+
+}
+
+.card h2{
+
+  color:#144269;
+
+  margin-bottom:20px;
+
+  font-size:28px;
+
+}
+
+.info{
+
+  margin-bottom:20px;
+
+}
+
+.info span{
+
+  display:block;
+
+  color:#144269;
+
+  font-weight:bold;
+
+  margin-bottom:8px;
+
+}
+
+.info p{
+
+  color:#475569;
+
+  line-height:1.5;
+
+}
+
+/* ===================================== */
+/* NÃO ENCONTRADO */
+/* ===================================== */
+
+.nao-encontrado{
+
+  margin-top:40px;
+
+  text-align:center;
+
+  background:#fff5f5;
+
+  border-radius:25px;
+
+  padding:30px;
+
+}
+
+.icone{
+
+  font-size:70px;
+
+  margin-bottom:15px;
+
+}
+
+.nao-encontrado h2{
+
+  color:#dc2626;
+
+  margin-bottom:10px;
+
+}
+
+.nao-encontrado p{
+
+  color:#64748b;
+
+}
+
+/* ===================================== */
+/* UTIL */
+/* ===================================== */
+
+.escondido{
+
+  display:none;
+
+}
+
+/* ===================================== */
+/* RESPONSIVO */
+/* ===================================== */
+
+@media(max-width:500px){
+
+  body{
+
+    padding:0;
+
+  }
+
+  .celular{
+
+    border-radius:0;
+
+    max-width:100%;
+
+  }
+
+}
