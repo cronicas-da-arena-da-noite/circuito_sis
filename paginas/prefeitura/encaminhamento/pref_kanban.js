@@ -63,26 +63,20 @@ function carregarCards() {
 
     carregarDenuncias()
 
-    .filter(
-        d =>
-        d.status === "Prefeitura"
-    )
+        .filter(d => d.status === "kanban")
 
-    .forEach(d => {
+        .forEach(d => {
 
-        if(
-            !d.departamento ||
-            d.departamento == ""
-        ){
+            if (!d.departamento || d.departamento === "") {
 
-            d.departamento =
-                "Nova";
+                d.departamento = "Nova";
 
-        }
+                atualizarDenuncia(d);
+            }
 
-        adicionarCard(d);
+            adicionarCard(d);
 
-    });
+        });
 
 }
 
