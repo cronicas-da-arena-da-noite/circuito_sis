@@ -1,141 +1,151 @@
 document
-.getElementById("formCadastro")
-.addEventListener("submit",(e)=>{
+    .getElementById("formCadastro")
+    .addEventListener("submit", (e) => {
 
-    e.preventDefault();
+        e.preventDefault();
 
-    const nome =
+        const nome =
+            document
+                .getElementById("nome")
+                .value
+                .trim();
 
-    document
-    .getElementById("nome")
-    .value
-    .trim();
+        // validação: só letras e espaços (sem números)
+        const nomeValido = /^[A-Za-zÀ-ÿ\s]+$/.test(nome);
 
-    const email =
+        if (!nomeValido) {
 
-    document
-    .getElementById("email")
-    .value
-    .trim();
+            alert("O nome deve conter apenas letras.");
 
-    const senha =
+            return;
 
-    document
-    .getElementById("senha")
-    .value
-    .trim();
+        }
 
-    const repetirSenha =
+        const email =
 
-    document
-    .getElementById("repetirSenha")
-    .value
-    .trim();
+            document
+                .getElementById("email")
+                .value
+                .trim();
 
-    const pergunta =
+        const senha =
 
-    document
-    .getElementById("pergunta")
-    .value;
+            document
+                .getElementById("senha")
+                .value
+                .trim();
 
-    const resposta =
+        const repetirSenha =
 
-    document
-    .getElementById("resposta")
-    .value
-    .trim();
+            document
+                .getElementById("repetirSenha")
+                .value
+                .trim();
 
-    if(senha !== repetirSenha){
+        const pergunta =
 
-        alert(
-            "As senhas não coincidem."
-        );
+            document
+                .getElementById("pergunta")
+                .value;
 
-        return;
+        const resposta =
 
-    }
+            document
+                .getElementById("resposta")
+                .value
+                .trim();
 
-    let usuarios =
+        if (senha !== repetirSenha) {
 
-    JSON.parse(
-        localStorage.getItem(
-            "usuarios"
-        )
-    )
+            alert(
+                "As senhas não coincidem."
+            );
 
-    ||
+            return;
 
-    [];
+        }
 
-    const usuarioExistente =
+        let usuarios =
 
-    usuarios.find(usuario=>
+            JSON.parse(
+                localStorage.getItem(
+                    "usuarios"
+                )
+            )
 
-        usuario.email
-        .toLowerCase()
+            ||
 
-        ===
+            [];
 
-        email
-        .toLowerCase()
+        const usuarioExistente =
 
-    );
+            usuarios.find(usuario =>
 
-    if(usuarioExistente){
+                usuario.email
+                    .toLowerCase()
 
-        alert(
-            "Usuário já cadastrado."
-        );
+                ===
 
-        return;
+                email
+                    .toLowerCase()
 
-    }
+            );
 
-    const novoUsuario = {
+        if (usuarioExistente) {
 
-        id:Date.now(),
+            alert(
+                "Usuário já cadastrado."
+            );
 
-        nome:nome,
+            return;
 
-        email:email,
+        }
 
-        senha:senha,
+        const novoUsuario = {
 
-        pergunta:pergunta,
+            id: Date.now(),
 
-        resposta:resposta
+            nome: nome,
 
-    };
+            email: email,
 
-    usuarios.push(
-        novoUsuario
-    );
+            senha: senha,
 
-    localStorage.setItem(
+            pergunta: pergunta,
 
-        "usuarios",
+            resposta: resposta
 
-        JSON.stringify(
-            usuarios
-        )
+        };
 
-    );
-
-    localStorage.setItem(
-
-        "usuarioLogado",
-
-        JSON.stringify(
+        usuarios.push(
             novoUsuario
-        )
+        );
 
-    );
+        localStorage.setItem(
 
-    alert(
-        "Cadastro realizado com sucesso!"
-    );
+            "usuarios",
 
-    location.href =
-    "../login/login.html";
+            JSON.stringify(
+                usuarios
+            )
 
-});
+        );
+
+        localStorage.setItem(
+
+            "usuarioLogado",
+
+            JSON.stringify(
+                novoUsuario
+            )
+
+        );
+
+        alert(
+            "Cadastro realizado com sucesso!"
+        );
+
+        location.href =
+            "../login/login.html";
+
+    });
