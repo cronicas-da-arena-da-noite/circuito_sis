@@ -148,5 +148,5 @@ function fecharModal() {
     document.getElementById("modalSucesso")
         .classList.add("escondido");
 
-    location.href = "../../../index.html";
+    location.href = "../dashboard/dashboard.html";
 }

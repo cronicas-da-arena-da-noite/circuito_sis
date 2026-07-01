@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperar Senha</title>
+    <link rel="stylesheet" href="recuperar.css">
+
+</head>
+
+<body>
+    <div class="tela">
+
+        <div class="topo">
+
+            <a href="../login/login.html" class="voltar">
+                ←
+            </a>
+
+            <div class="icone-senha">
+
+                <img src="../../../anexos/imagens/cadeado.png" alt="Perfil">
+
+            </div>
+
+            <h1>Recuperar Senha</h1>
+
+        </div>
+
+        <div class="conteudo">
+
+            <form id="formCadastro">
+
+                <input id="nome" type="text" placeholder="Email" required>
+                <div class="campo-select">
+
+                    <select id="pergunta" required>
+
+                        <option value="">
+                            Pergunta secreta
+                        </option>
+
+                        <option>
+                            Nome do primeiro animal?
+                        </option>
+
+                        <option>
+                            Nome da mãe?
+                        </option>
+
+                        <option>
+                            Cidade onde nasceu?
+                        </option>
+
+                        <option>
+                            Comida favorita?
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <input id="resposta" type="text" placeholder="Resposta secreta" required>
+                <input id="senha" type="password" placeholder="Nova Senha" required>
+
+                <input id="repetirSenha" type="password" placeholder="Repetir nova senha" required>
+
+                <button class="botao">
+                    Confirmar Nova Senha
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <script src="recuperar.js"></script>
+</body>
+
+</html>
