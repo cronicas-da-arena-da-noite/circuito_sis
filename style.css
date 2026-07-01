@@ -55,7 +55,8 @@ body {
     z-index: 2;
 }
 
-.botao {
+.botao,
+.botao_ia {
     width: 75%;
     height: 48px;
 
@@ -72,6 +73,17 @@ body {
     justify-content: center;
 
     font-weight: bold;
+
+}
+
+.botao_ia>a {
+    text-decoration: none;
+    color: white;
+}
+
+.botao_ia {
+    background: #fb4d13;
+    cursor: pointer;
 }
 
 /* RODAPÉ */
@@ -88,4 +100,8 @@ body {
 .rodape img {
     width: 100%;
     display: block;
+}
+
+.ia {
+    height: 35px;
 }

@@ -1,0 +1,643 @@
+/* =======================================================
+   RESET
+======================================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+    background: #eef3f7;
+    overflow: hidden;
+}
+
+/* =======================================================
+   TELA
+======================================================= */
+.tela {
+    width: 100%;
+    max-width: 430px;
+    height: 100vh;
+    margin: auto;
+    background: #f5f7fb;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+}
+
+/* =======================================================
+   TOPO
+======================================================= */
+.topo {
+    background:
+        linear-gradient(135deg,
+            #089ea3,
+            #2b67b7);
+    padding:
+        18px 20px 24px;
+    position: relative;
+    text-align: center;
+    color: white;
+    box-shadow:
+        0 5px 18px rgba(0, 0, 0, .18);
+    z-index: 20;
+}
+
+/* =======================================================
+   BOTÃO VOLTAR
+======================================================= */
+.voltar {
+    position: absolute;
+    left: 15px;
+    top: 18px;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 2px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-size: 28px;
+    transition: .25s;
+}
+
+.voltar:hover {
+    background:
+        rgba(255, 255, 255, .18);
+}
+
+/* =======================================================
+   ÍCONE IA
+======================================================= */
+.ia {
+    width: auto;
+    height: 56px;
+    display: block;
+    margin:
+        8px auto 12px;
+}
+
+/* =======================================================
+   TÍTULO
+======================================================= */
+.topo h1 {
+    font-size: 29px;
+    font-weight: 800;
+    margin-bottom: 8px;
+    letter-spacing: .3px;
+}
+
+.topo p {
+    font-size: 15px;
+    opacity: .95;
+    line-height: 1.5;
+    max-width: 300px;
+    margin: auto;
+}
+
+/* =======================================================
+   CHAT
+======================================================= */
+#chat {
+    flex: 1;
+    overflow-y: auto;
+    padding:
+        22px 18px 30px;
+    scroll-behavior: smooth;
+}
+
+/* barra */
+#chat::-webkit-scrollbar {
+    width: 7px;
+}
+
+#chat::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+#chat::-webkit-scrollbar-thumb {
+    background: #b7c2cf;
+    border-radius: 20px;
+}
+
+/* =======================================================
+   ETAPAS
+======================================================= */
+.etapa {
+    display: none;
+    animation:
+        aparecer .35s ease;
+}
+
+.etapa.ativa {
+    display: block;
+}
+
+/* =======================================================
+   ANIMAÇÃO
+======================================================= */
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform:
+            translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0);
+    }
+}
+
+/* =======================================================
+   MENSAGEM IA (BALÃO + AVATAR)
+======================================================= */
+.mensagemIA {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+/* =======================================================
+   BALÃO DA IA
+======================================================= */
+.balao {
+    background: #ffffff;
+    padding: 16px 16px;
+    border-radius: 18px;
+    border-top-left-radius: 6px;
+    box-shadow:
+        0 6px 18px rgba(0, 0, 0, .08);
+    color: #1f2d3d;
+    font-size: 15px;
+    line-height: 1.5;
+    max-width: 280px;
+    position: relative;
+    animation:
+        fadeIn .3s ease;
+}
+
+/* pontinha do balão */
+.balao::before {
+    content: "";
+    position: absolute;
+    left: -6px;
+    top: 14px;
+    width: 12px;
+    height: 12px;
+    background: #fff;
+    transform: rotate(45deg);
+}
+
+/* =======================================================
+   TEXTO DESTACADO
+======================================================= */
+.balao strong {
+    color: #2b67b7;
+}
+
+/* =======================================================
+   ANIMAÇÃO BALÃO
+======================================================= */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform:
+            scale(.96);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            scale(1);
+    }
+}
+
+/* =======================================================
+   BOTÃO PADRÃO
+======================================================= */
+.botao {
+    width: 100%;
+    padding: 14px 16px;
+    margin-top: 14px;
+    border: none;
+    border-radius: 14px;
+    background:
+        linear-gradient(90deg,
+            #089ea3,
+            #2b67b7);
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.botao:hover {
+    transform: translateY(-1px);
+    opacity: .95;
+}
+
+/* =======================================================
+   BOTÃO SECUNDÁRIO
+======================================================= */
+.botao.enviar {
+    font-size: 18px;
+    padding: 16px;
+    border-radius: 18px;
+}
+
+/* =======================================================
+   RESPOSTA INPUT
+======================================================= */
+input,
+select,
+textarea {
+    width: 100%;
+    margin-top: 12px;
+    padding: 14px 14px;
+    border-radius: 14px;
+    border: 2px solid #d7e0ea;
+    outline: none;
+    font-size: 15px;
+    background: #fff;
+    transition: .2s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #2b67b7;
+    box-shadow:
+        0 0 0 3px rgba(43, 103, 183, .15);
+}
+
+/* =======================================================
+   SELECT
+======================================================= */
+select {
+    appearance: none;
+}
+
+/* seta do select */
+select {
+    background-image:
+        linear-gradient(45deg, transparent 50%, #666 50%),
+        linear-gradient(135deg, #666 50%, transparent 50%);
+    background-position:
+        calc(100% - 18px) 50%,
+        calc(100% - 12px) 50%;
+    background-size: 6px 6px;
+    background-repeat: no-repeat;
+}
+
+/* =======================================================
+   TEXTAREA
+======================================================= */
+textarea {
+    min-height: 110px;
+    resize: none;
+}
+
+/* =======================================================
+   UPLOAD DE ARQUIVO
+======================================================= */
+.upload {
+    width: 100%;
+    padding: 16px;
+    margin-top: 12px;
+    border-radius: 16px;
+    border: 2px dashed #2b67b7;
+    background: #ffffff;
+    color: #2b67b7;
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.upload:hover {
+    background: #f3f8ff;
+    transform: translateY(-1px);
+}
+
+/* nome do arquivo */
+#arquivoNome {
+    margin-top: 10px;
+    font-size: 13px;
+    color: #5a6b7d;
+    text-align: center;
+}
+
+/* =======================================================
+   RESUMO FINAL
+======================================================= */
+
+.resumo {
+
+    background: #fff;
+
+    border-radius: 16px;
+
+    padding: 16px;
+
+    margin-top: 16px;
+
+    box-shadow: 0 6px 16px rgba(0, 0, 0, .06);
+
+}
+
+.resumo div {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+
+    margin-bottom: 12px;
+
+    padding-bottom: 10px;
+
+    border-bottom: 1px solid #eef2f6;
+
+}
+
+.resumo div:last-child {
+
+    border-bottom: none;
+
+    margin-bottom: 0;
+
+    padding-bottom: 0;
+
+}
+
+.resumo strong {
+
+    font-size: 13px;
+
+    color: #2b67b7;
+
+}
+
+.resumo span {
+
+    font-size: 15px;
+
+    color: #1f2d3d;
+
+}
+
+/* =======================================================
+   ETAPA CENTRAL
+======================================================= */
+
+.etapa {
+
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+/* =======================================================
+   ESPAÇAMENTO GERAL
+======================================================= */
+
+#chat section {
+
+    margin-bottom: 18px;
+
+}
+
+/* =======================================================
+   MODAL
+======================================================= */
+
+.modal {
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, .55);
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    z-index: 100;
+
+    padding: 20px;
+
+}
+
+/* caixa do modal */
+
+.modal-box {
+
+    width: 100%;
+
+    max-width: 340px;
+
+    background: #fff;
+
+    border-radius: 20px;
+
+    padding: 22px;
+
+    text-align: center;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .2);
+
+    animation: pop .25s ease;
+}
+
+/* animação modal */
+
+@keyframes pop {
+
+    from {
+
+        transform: scale(.9);
+
+        opacity: 0;
+
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* ícone sucesso */
+.icone {
+    width: 72px;
+    height: 72px;
+    margin: 0 auto 12px;
+    border-radius: 50%;
+    background: #10b981;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 38px;
+    color: #fff;
+    font-weight: 900;
+}
+
+/* código protocolo */
+#codigo {
+    margin-top: 12px;
+    padding: 12px;
+    background: #f3f6f9;
+    border-radius: 12px;
+    font-size: 22px;
+    font-weight: 800;
+    color: #1f2d3d;
+    letter-spacing: 1px;
+}
+
+/* =======================================================
+   BOTÃO FECHAR MODAL
+======================================================= */
+.modal .botao {
+    margin-top: 16px;
+}
+
+/* =======================================================
+   UTILITÁRIOS
+======================================================= */
+.escondido {
+    display: none !important;
+}
+
+/* =======================================================
+   RESPONSIVO AJUSTES
+======================================================= */
+@media (max-width:420px) {
+    .balao {
+        max-width: 240px;
+        font-size: 14px;
+    }
+
+    .topo h1 {
+        font-size: 24px;
+    }
+}
+
+/* =======================================================
+   MODAL
+======================================================= */
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .55);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    padding: 20px;
+}
+
+/* caixa do modal */
+.modal-box {
+    width: 100%;
+    max-width: 340px;
+    background: #fff;
+    border-radius: 20px;
+    padding: 22px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .2);
+    animation: pop .25s ease;
+}
+
+/* animação modal */
+@keyframes pop {
+    from {
+        transform: scale(.9);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* ícone sucesso */
+.icone {
+    width: 72px;
+    height: 72px;
+    margin: 0 auto 12px;
+    border-radius: 50%;
+    background: #10b981;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 38px;
+    color: #fff;
+    font-weight: 900;
+}
+
+/* código protocolo */
+#codigo {
+    margin-top: 12px;
+    padding: 12px;
+    background: #f3f6f9;
+    border-radius: 12px;
+    font-size: 22px;
+    font-weight: 800;
+    color: #1f2d3d;
+    letter-spacing: 1px;
+}
+
+/* =======================================================
+   BOTÃO FECHAR MODAL
+======================================================= */
+.modal .botao {
+    margin-top: 16px;
+}
+
+/* =======================================================
+   UTILITÁRIOS
+======================================================= */
+.escondido {
+    display: none !important;
+}
+
+/* =======================================================
+   RESPONSIVO AJUSTES
+======================================================= */
+@media (max-width:420px) {
+    .balao {
+        max-width: 240px;
+        font-size: 14px;
+    }
+
+    .topo h1 {
+        font-size: 24px;
+    }
+}
+
+#etapa1, #etapa2, #etapa3, #etapa4, #etapa5, #etapa6{
+    display: none;
+}

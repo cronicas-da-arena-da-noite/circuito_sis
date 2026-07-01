@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nova Denúncia</title>
+
+    <link rel="stylesheet" href="denuncia_ia.css">
+
+</head>
+
+<body>
+
+<div class="tela">
+
+    <!-- ===================================================== -->
+    <!-- TOPO -->
+    <!-- ===================================================== -->
+
+    <header class="topo">
+
+        <a href="../../../index.html" class="voltar" onclick="return voltarDenuncia()">
+            ←
+        </a>
+
+        <img src="../../../anexos/imagens/ia.png" class="ia" alt="IA">
+
+        <h1>Assistente Virtual</h1>
+
+        <p>
+            Vou te ajudar a registrar sua denúncia em poucos passos.
+        </p>
+
+    </header>
+
+    <!-- ===================================================== -->
+    <!-- CHAT -->
+    <!-- ===================================================== -->
+
+    <main id="chat">
+
+        <!-- ===================================================== -->
+        <!-- ETAPA 0 -->
+        <!-- ===================================================== -->
+
+        <section class="etapa ativa" id="etapa0">
+
+            <div class="mensagemIA">
+
+                <img src="../../../anexos/imagens/ia.png" class="ia" alt="">
+
+                <div class="balao">
+
+                    Olá 👋  
+                    Vamos começar sua denúncia?
+
+                </div>
+
+            </div>
+
+            <button class="botao" id="botao0">
+                Começar
+            </button>
+
+        </section>
+
+        <!-- ===================================================== -->
+        <!-- ETAPA 1 - BAIRRO -->
+        <!-- ===================================================== -->
+
+        <section class="etapa" id="etapa1">
+
+            <div class="mensagemIA">
+
+                <img src="../../../anexos/imagens/ia.png" class="ia" alt="">
+
+                <div class="balao">
+                    Em qual bairro aconteceu o problema?
+                </div>
+
+            </div>
+
+            <input type="text" id="bairro" placeholder="Digite o bairro">
+
+            <button class="botao" id="botao1">
+                Continuar
+            </button>
+
+        </section>
+
+        <!-- ===================================================== -->
+        <!-- ETAPA 2 - RUA -->
+        <!-- ===================================================== -->
+
+        <section class="etapa" id="etapa2">
+
+            <div class="mensagemIA">
+
+                <img src="../../../anexos/imagens/ia.png" class="ia" alt="">
+
+                <div class="balao">
+                    Qual é o nome da rua?
+                </div>
+
+            </div>
+
+            <input type="text" id="rua" placeholder="Digite a rua">
+
+            <button class="botao" id="botao2">
+                Continuar
+            </button>
+
+        </section>
+
+        <!-- ===================================================== -->
+        <!-- ETAPA 3 - TIPO -->
+        <!-- ===================================================== -->
+
+        <section class="etapa" id="etapa3">
+
+            <div class="mensagemIA">
+
+                <img src="../../../anexos/imagens/ia.png" class="ia" alt="">
+
+                <div class="balao">
+                    Qual problema você encontrou?
+                </div>
+
+            </div>
+
+            <select id="tipo">
+
+                <option value="">Selecione</option>
+                <option>Calçada quebrada</option>
+                <option>Falta de acessibilidade</option>
+                <option>Buraco na rua</option>
+                <option>Lixo acumulado</option>
+                <option>Semáforo quebrado</option>
+                <option>Poste danificado</option>
+                <option>Vazamento</option>
+                <option>Outro</option>
+
+            </select>
+
+            <button class="botao" id="botao3">
+                Continuar
+            </button>
+
+        </section>
+
+        <!-- ===================================================== -->
+        <!-- ETAPA 4 - ARQUIVO -->
+        <!-- ===================================================== -->
+
+        <section class="etapa" id="etapa4">
+
+            <div class="mensagemIA">
+
+                <img src="../../../anexos/imagens/ia.png" class="ia" alt="">
+
+                <div class="balao">
+                    Se quiser, envie uma foto ou vídeo.
+                </div>
+
+            </div>
+
+            <input type="file" id="arquivo" hidden accept="image/*,video/*">
+
+            <button class="upload" onclick="abrirArquivo()">
+                📷 Escolher arquivo
+            </button>
+
+            <div id="arquivoNome">Nenhum arquivo selecionado</div>
+
+            <button class="botao" id="botao4">
+                Continuar
+            </button>
+
+        </section>
+
+        <!-- ===================================================== -->
+        <!-- ETAPA 5 - COMENTÁRIO -->
+        <!-- ===================================================== -->
+
+        <section class="etapa" id="etapa5">
+
+            <div class="mensagemIA">
+
+                <img src="../../../anexos/imagens/ia.png" class="ia" alt="">
+
+                <div class="balao">
+                    Descreva rapidamente o problema.
+                </div>
+
+            </div>
+
+            <textarea id="comentario" placeholder="Escreva aqui..."></textarea>
+
+            <button class="botao" id="botao5">
+                Continuar
+            </button>
+
+        </section>
+
+        <!-- ===================================================== -->
+        <!-- ETAPA 6 - RESUMO -->
+        <!-- ===================================================== -->
+
+        <section class="etapa" id="etapa6">
+
+            <div class="mensagemIA">
+
+                <img src="../../../anexos/imagens/ia.png" class="ia" alt="">
+
+                <div class="balao">
+                    Revise antes de enviar.
+                </div>
+
+            </div>
+
+            <div class="resumo">
+
+                <div><strong>Bairro</strong><span id="rBairro"></span></div>
+                <div><strong>Rua</strong><span id="rRua"></span></div>
+                <div><strong>Problema</strong><span id="rTipo"></span></div>
+                <div><strong>Comentário</strong><span id="rComentario"></span></div>
+                <div><strong>Arquivo</strong><span id="rArquivo"></span></div>
+
+            </div>
+
+            <button class="botao enviar" id="enviar_denuncia">
+                Enviar denúncia
+            </button>
+
+        </section>
+
+    </main>
+
+</div>
+
+<!-- ===================================================== -->
+<!-- MODAL -->
+<!-- ===================================================== -->
+
+<div class="modal escondido" id="modalSucesso">
+
+    <div class="modal-box">
+
+        <div class="icone">✓</div>
+
+        <h2>Denúncia enviada!</h2>
+
+        <p>Seu protocolo:</p>
+
+        <div id="codigo">PAL-000000</div>
+
+        <button class="botao" onclick="fecharModal()">
+            Fechar
+        </button>
+
+    </div>
+
+</div>
+
+<script src="denuncia_ia.js"></script>
+
+</body>
+</html>
