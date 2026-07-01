@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,99 +8,123 @@
 
     <link rel="stylesheet" href="dashboard.css">
 </head>
+
 <body>
 
-<div class="container">
+    <div class="container">
 
-    <!-- SIDEBAR -->
+        <!-- SIDEBAR -->
 
-    <aside class="sidebar">
+        <aside class="sidebar">
 
-        <div class="logo">
-            <h2>PALHOÇA FÁCIL</h2>
-        </div>
+            <div class="logo">
+                <h2>PALHOÇA FÁCIL</h2>
+            </div>
 
-        <nav>
+            <nav>
 
-            <button id="btnDashboard" class="menu active">
-                📥 Dashboard
+                <button id="btnDashboard" class="menu active">
+                    📥 Dashboard
+                </button>
+
+                <button id="btnEncaminhar" class="menu">
+                    📤 Encaminhar
+                </button>
+                <button id="btnIA" class="menu">
+                    <img class="ia" src="../../../anexos/imagens/ia.png" alt="">
+                    IA
+                </button>
+
+            </nav>
+
+            <button id="btnSair" class="sair">
+                🚪 Sair
             </button>
 
-            <button id="btnEncaminhar" class="menu">
-                📤 Encaminhar
+        </aside>
+
+        <!-- CENTRO -->
+
+        <main class="conteudo">
+
+            <div class="topo">
+
+                <h2 id="tituloPagina">
+                    Caixa de Entrada
+                </h2>
+
+            </div>
+
+            <div class="lista" id="listaDenuncias">
+
+                <!-- JS -->
+
+            </div>
+
+        </main>
+
+        <!-- PAINEL -->
+
+        <aside class="painel">
+
+            <h2>Denúncia</h2>
+
+            <label>Protocolo</label>
+            <input id="protocolo" disabled>
+
+            <label>Usuário</label>
+            <input id="usuario">
+
+            <label>Email</label>
+            <input id="email">
+
+            <label>Tipo</label>
+            <input id="tipo">
+
+            <label>Bairro</label>
+            <input id="bairro">
+
+            <label>Rua</label>
+            <input id="rua">
+
+            <label>Comentário</label>
+            <textarea id="comentario"></textarea>
+
+            <label>Arquivo</label>
+            <input id="arquivo">
+
+            <button id="btnSalvar">
+                Salvar
             </button>
 
-        </nav>
+        </aside>
 
-        <button id="btnSair" class="sair">
-            🚪 Sair
-        </button>
+    </div>
 
-    </aside>
 
-    <!-- CENTRO -->
+<div id="modalIA" class="modal-ia">
 
-    <main class="conteudo">
+    <div class="janela-ia">
 
-        <div class="topo">
+        <img src="../../../anexos/imagens/carregando.gif" alt="Carregando">
 
-            <h2 id="tituloPagina">
-                Caixa de Entrada
-            </h2>
+        <h3>Inteligência Artificial</h3>
 
-        </div>
+        <p>
+            Processando denúncias regulares e encaminhando para a próxima triagem...
+        </p>
 
-        <div class="lista" id="listaDenuncias">
-
-            <!-- JS -->
-
-        </div>
-
-    </main>
-
-    <!-- PAINEL -->
-
-    <aside class="painel">
-
-        <h2>Denúncia</h2>
-
-        <label>Protocolo</label>
-        <input id="protocolo" disabled>
-
-        <label>Usuário</label>
-        <input id="usuario">
-
-        <label>Email</label>
-        <input id="email">
-
-        <label>Tipo</label>
-        <input id="tipo">
-
-        <label>Bairro</label>
-        <input id="bairro">
-
-        <label>Rua</label>
-        <input id="rua">
-
-        <label>Comentário</label>
-        <textarea id="comentario"></textarea>
-
-        <label>Arquivo</label>
-        <input id="arquivo">
-
-        <button id="btnSalvar">
-            Salvar
-        </button>
-
-    </aside>
+    </div>
 
 </div>
 
-<script src="storage.js"></script>
-<script src="inbox.js"></script>
-<script src="encaminhar.js"></script>
-<script src="editor.js"></script>
-<script src="app.js"></script>
-
+    <script src="storage.js"></script>
+    <script src="inbox.js"></script>
+    <script src="encaminhar.js"></script>
+    <script src="editor.js"></script>
+    <script src="app.js"></script>
+    <script src="./ia/bairros.js"></script>
+    <script src="./ia/ruas.js"></script>
+    <script src="./ia/ia.js"></script>
 </body>
 </html>

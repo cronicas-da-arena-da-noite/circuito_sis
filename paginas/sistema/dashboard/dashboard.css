@@ -320,3 +320,52 @@ nav {
     color: white;
 
 }
+.ia{
+    height: 35px;
+}
+/* =========================
+   MODAL IA
+========================= */
+
+.modal-ia{
+    position:fixed;
+    inset:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:rgba(0,0,0,.45);
+    opacity:0;
+    pointer-events:none;
+    transition:.25s;
+    z-index:9999;
+}
+
+.modal-ia.mostrar{
+    opacity:1;
+    pointer-events:auto;
+}
+
+.janela-ia{
+    width:390px;
+    background:#fff;
+    border-radius:14px;
+    padding:27px;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(0,0,0,.25);
+}
+
+.janela-ia img{
+    width:105px;
+    margin:0 auto 15px;
+}
+
+.janela-ia h3{
+    font-size:27px;
+    margin-bottom:12px;
+}
+
+.janela-ia p{
+    font-size:19px;
+    line-height:1.5;
+    color:#555;
+}
