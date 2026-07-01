@@ -84,6 +84,7 @@ body {
 .botao_ia {
     background: #fb4d13;
     cursor: pointer;
+    border: none;
 }
 
 /* RODAPÉ */
